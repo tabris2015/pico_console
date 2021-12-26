@@ -1,16 +1,15 @@
 #include "pico/stdlib.h"
 #include "button.h"
+#include "digital_output.h"
 #include "config.h"
 
 Button but_a(A_PIN, 30);
+DigitalOutput led(LED_PIN);
 
 int last_button_state = 0;
-bool led_state = true;
 
 void setup(){
     stdio_init_all();
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
 }
 
 void loop(){
@@ -20,10 +19,9 @@ void loop(){
     {
         if (but_val == 1)
         {
-            led_state = !led_state;
+            led = !led;
         }
     }
-    gpio_put(LED_PIN, led_state);
     last_button_state = but_val;
 }
 

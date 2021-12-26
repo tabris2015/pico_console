@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
-add_executable(${PROJECT_NAME} main.cpp include/config.h src/digital_input.cpp include/digital_input.h src/button.cpp include/button.h include/utils.h src/utils.cpp)
+add_executable(${PROJECT_NAME} main.cpp include/config.h src/digital_input.cpp include/digital_input.h src/button.cpp include/button.h include/utils.h src/utils.cpp src/digital_output.cpp include/digital_output.h)
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
